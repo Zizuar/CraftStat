@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CraftStat <v0 class="8 2"></v0></title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Font Awesome Glyphicons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> CraftStat</h1>
+      <hr>
+      <h2>Enter your order number in the field below to search. </h2>
+      <h3>Currently available information includes: </h3>
+      <h4>Ship Date | Original Ship Date | Known Delay Reasons | Shipping Information if Available</h4>
+      <br>
+
+      <div>
+        <input type="search" id="site-search" name="q" aria-label="Search for customer order">     
+        <a href="/order"><button class="btn btn-sm btn-primary"><h5><span class="fa fa-list-alt"></span> Search</h5></button></a>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/orders">API CraftStat Orders</a> | <a href="https://github.com/zizuar/CraftStat">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+
+</body>
+
+</html>
