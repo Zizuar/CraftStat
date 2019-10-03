@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="../js/bizz.js"></script>
 
   <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -29,8 +30,12 @@
       <br>
 
       <div>
-        <input type="search" id="site-search" name="q" aria-label="Search for customer order">     
-        <a href="/order"><button class="btn btn-sm btn-primary"><h5><span class="fa fa-list-alt"></span> Search</h5></button></a>
+        <form class="kickAPI" action="/api/orders" method="GET">
+        <input type="search" id="order_search" name="q_order" value="" aria-label="Search for customer order">     
+        <!-- <a href="/order"> -->
+          <button class="btn btn-sm btn-primary" type="submit" id="sub_search"><h5><span class="fa fa-list-alt"></span> Search</h5></button>
+        <!-- </a> -->
+        </form>
       </div>
 
     </div>
