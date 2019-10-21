@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CraftStat <v0 class="8 2"></v0></title>
-
+  <title>CraftStat v0.8.2</title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:; default-src 'self'"> -->
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/edfc177eb3.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="../js/bizz.js"></script>
+  <script src="./js/bizz.js"></script>
 
   <!-- Font Awesome Glyphicons -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
 
 </head>
 
@@ -22,7 +22,7 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1><i class="fa fa-facebook-square" aria-hidden="true"></i> CraftStat</h1>
+      <h1><i class="fas fa-cog fa-spin" aria-hidden="true"></i> CraftStat</h1>
       <hr>
       <h2>Enter your order number in the field below to search. </h2>
       <h3>Currently available information includes: </h3>
@@ -30,8 +30,8 @@
       <br>
 
       <div>
-        <form class="kickAPI" action="/api/orders" method="GET">
-        <input type="search" id="order_search" name="q_order" value="" aria-label="Search for customer order">     
+        <form class="kickAPI" action="/api/orders/" method="GET">
+        <input type="text" id="order_search" name="q_order" aria-label="Search for customer order">     
         <!-- <a href="/order"> -->
           <button class="btn btn-sm btn-primary" type="submit" id="sub_search"><h5><span class="fa fa-list-alt"></span> Search</h5></button>
         <!-- </a> -->
@@ -42,7 +42,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/orders">API CraftStat Orders</a> | <a href="https://github.com/zizuar/CraftStat">GitHub Repo</a></p>
+        <p><a href="../api/orders">API CraftStat Orders</a> | <a href="https://github.com/zizuar/CraftStat">GitHub Repo</a></p>
       </div>
     </footer>
 

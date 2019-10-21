@@ -1,17 +1,23 @@
+import { Script } from "vm";
 
 $(document).ready(function() {
 
-    $(".kickAPI").on("submit", function(event) {
+// Below might be coming up null due to document.ready as a function and not a set Script.
+
+    // let q_order = $("#order_search").val().trim();
+    // console.log(q_order);
+
+    $(".submit").on("click", function(event) {
         event.preventDefault();
 
-        const cust_order = document.getElementById("order_search");
+        const cust_order = document.getElementById("q_order");
         console.log(cust_order);
-        $.ajax({
-            method: "GET",
-            url: "/order" + cust_order
-        }).then(function(data) {
-            location.reload();
-        });
+        // $.ajax({
+        //     method: "GET",
+        //     url: "../order/" + cust_order
+        // }).then(function(data) {
+        //     location.reload();
+        // });
     });
     });
 

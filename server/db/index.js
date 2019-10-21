@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     host : "localhost",
     port : 3306,
     user : "root",
-    password : "",
+    password : "9q25O$3@R7T*a5Wp$YP",
     database : "GCDC_CraftStat",
     multipleStatements : true
 });
