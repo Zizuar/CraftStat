@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+// let orderData = {};
 
 const pool = mysql.createPool({
     connectionLimit: 15,
@@ -9,6 +10,8 @@ const pool = mysql.createPool({
     database : "GCDC_CraftStat",
     multipleStatements : true
 });
+
+// let order_number = orderData.QjaX74_p7T3ng0;
 
 let ordersdb = {}
 
@@ -35,3 +38,4 @@ ordersdb.one = (order_number) => {
 };
 
 module.exports = ordersdb;
+// module.exports = orderData;

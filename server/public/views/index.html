@@ -27,10 +27,11 @@
 
       <div>
         <!-- <form class="kickAPI" action="/api/orders" method="GET"> -->
-          <form class="kickAPI">
+          <form class="form-control" id="kickAPI" readonly>
             <h5>
-            <input type="text" id="order" class="form" label="Search for customer order" required>     
-          <button class="btn-sm btn-primary" type="submit"><span class="fa fa-list-alt"> Search</button></span>
+            <label for="OrderQueryForm">Order Number</label>
+            <input type="text" id="order_number" class="form-control-sm" required>     
+          <button class="btn-sm btn-primary" type="submit" id="submit"><span class="fa fa-list-alt"> Search</button></span>
             </h5>
         </form>
       </div>

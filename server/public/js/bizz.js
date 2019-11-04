@@ -2,43 +2,25 @@
 
 $(document).ready(function() {
 
-var config = {
-    ".kickAPI": {},
-    ".kickAPI-deselect": {
-      allow_single_deselect: true
-    },
-    ".kickAPI-no-single": {
-      disable_search_threshold: 10
-    },
-    ".kickAPI-no-results": {
-      no_results_text: "Oops, nothing found!"
-    },
-    ".kickAPI-width": {
-      width: "95%"
-    }
-  };
-
-  for (var selector in config) {
-    $(selector).chosen(config[selector]);
-  }
-
-  // Capture the form inputs
   $("#submit").on("click", function(event) {
     event.preventDefault();
 
     // Form validation
     function validateForm() {
       var isValid = true;
-      $(".form-control").each(function() {
+      console.log("Validity Check Started");
+      $(".form-control-sm").each(function() {
         if ($(this).val() === "") {
           isValid = false;
+          console.log("Not Valid");
         }
       });
 
       $(".kickAPI").each(function() {
 
-        if ($(this).val() === "") {
+        if ($(order_number).val() === "" ) {
           isValid = false;
+          console.log("Complete: Validity Check Failed. Sending alert.");
         }
       });
       return isValid;
@@ -47,15 +29,15 @@ var config = {
     // If all required fields are filled
     if (validateForm()) {
       // Create an object for the user"s data
-      var orderData = {
-        order: $("#order_number").val(),
-      };
+      const orderData = $("#order_number").val();
+      
+      console.log('Complete: Validity Check Passed - kickAPI init.', orderData);
 
       // AJAX post the data to the orders API.
-      $.get("/api/orders", orderData, function(data) {
+      $.get("/api/orders/:order_number", orderData, function(data) {
 
         // Grab the result from the AJAX post so that the best match's order and info are displayed.
-        $("#match-order").text(data.order);
+        $("#orderdb-name").text(data);
         // $("#match-img").attr("src", data.photo);
 
         // Show the modal with the best match

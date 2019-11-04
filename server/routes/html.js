@@ -1,4 +1,4 @@
-// const express = require('express');
+const express = require('express');
 // const db = require('../db');
 // // const views = require('../public');
 // const router = express.Router();
@@ -6,15 +6,15 @@ const path = require('path');
 
 module.exports = function(app) {
 
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "localhost.TLD"); // update to match the domain you will make the request from
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        next();
-      });
+    // app.use(function(req, res, next) {
+    //     res.header("Access-Control-Allow-Origin", "localhost.TLD"); // update to match the domain you will make the request from
+    //     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    //     next();
+    //   });
 
     app.get("/", function(req, res, next) {
         res.sendFile(path.join(__dirname, "/../public/views/index.html"));
-    });
+        });
 }
 // router.get
 
