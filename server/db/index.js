@@ -26,9 +26,9 @@ ordersdb.all = () => {
     });
 };
 
-ordersdb.one = (order_number) => {
+ordersdb.one = (orderData) => {
     return new Promise((resolve, reject) => {
-        pool.query('SELECT * FROM orders WHERE order_number = ?', [order_number], (err, results) => {
+        pool.query('SELECT * FROM orders WHERE order_number = ?', [orderData], (err, results) => {
             if(err) {
                 return reject(err);
             }
