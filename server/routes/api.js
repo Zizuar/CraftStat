@@ -10,11 +10,11 @@ const path = require("path");
 
 module.exports = function(app) {
 
-    app.get('/api/orders/:order_number', async (req, res, next) => {
+    app.use('/api/orders/:orderData', async (req, res, next) => {
         try {
-            console.log("Echo Query Submission: ", order_number);
+            console.log("Echo Query Submission: ", req);
             // let results = await db.one(req.params.id);
-            let results = await ordersdb.one(req.params.order_number);
+            let results = await ordersdb.one(req.params.orderData);
             console.log(results);
             res.json(results);
         } catch(e) {
@@ -23,10 +23,10 @@ module.exports = function(app) {
         } next();
     });
 
-    app.get('api/orders', function(req, res) {
-        let orderData = req.body;
-        console.log("Echo Query Submission: ", orderData);
-        });
+    // app.use('api/orders', function(req, res, next) {
+    //     let orderData = req.body;
+    //     console.log("Echo Query Submission: ", orderData);
+    //     });
 };
 
 // router.get('/api/orders?:order_number', async (req, res, next) => {

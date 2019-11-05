@@ -15,6 +15,9 @@ module.exports = function(app) {
     app.get("/", function(req, res, next) {
         res.sendFile(path.join(__dirname, "/../public/views/index.html"));
         });
+    // app.all('*', (req, res)=>{
+    //   res.send("<h1>404: Sorry, this page does not exist")
+    // });    
 }
 // router.get
 

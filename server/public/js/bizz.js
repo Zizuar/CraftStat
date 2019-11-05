@@ -34,14 +34,21 @@ $(document).ready(function() {
       console.log('Complete: Validity Check Passed - kickAPI init.', orderData);
 
       // AJAX post the data to the orders API.
-      $.get("/api/orders/:order_number", orderData, function(data) {
+      $.get("/api/orders/" + orderData, function(data) {
 
         // Grab the result from the AJAX post so that the best match's order and info are displayed.
-        $("#orderdb-name").text(data);
+        $("#results-order_number").text(data.order_number);
         // $("#match-img").attr("src", data.photo);
+        $("#results-po_number").text(data.po_number);
+        $("#results-return_date").text(data.return_date);
+        $("#results-requested_ship_date").text(data.requested_ship_date);
+        $("#results-redate_code").text(data.redate_code);
+        $("#results-tracking_data").text(data.tracking_data);
 
         // Show the modal with the best match
         $("#results-modal").modal("toggle");
+
+        console.log(data);
 
       });
     } else {
